@@ -5,9 +5,11 @@
 
 void LED_Init(U8, U8);
 void LED_Init(U8);
+void LED_Port_Init(U8, U8);
 
 void Set_LED(U8, U8, U8);
 void Set_LED(U8 ,U8);
+void Set_LED_Port(U8, U8);
 
 
 #endif
