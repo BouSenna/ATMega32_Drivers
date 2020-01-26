@@ -3,8 +3,8 @@ These are some drivers for ATMega32 AVR Microcontroller peripherals and commonly
 
 ### Hardware Abstraction Layer Drivers
 - [x] LED
-- [ ] 7-Segments
-- [ ] LCD
+- [x] 7-Segments
+- [x] LCD
 - [ ] Keypad
 
 ### Microcontroller Abstraction Layer Drivers
