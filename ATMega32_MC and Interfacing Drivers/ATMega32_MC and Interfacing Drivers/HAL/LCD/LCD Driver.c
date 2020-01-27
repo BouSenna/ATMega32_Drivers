@@ -18,8 +18,8 @@ void LCD_Init(void){
 	LCD_WriteCommand(0x33U);    /* Initialization */
 	LCD_WriteCommand(0x32U);    /* Initialization */
 	LCD_WriteCommand(0x28U);    /* Function Set: 4-bit, 2 Line, 5x7 Dots */
-	LCD_WriteCommand(0x0cU);    /*splay on ,cursor off */
-	LCD_WriteCommand(0x01U);    /* Clear display , Cursor home */
+	LCD_WriteCommand(0x0cU);    /* Display on, cursor off */
+	LCD_WriteCommand(0x01U);    /* Clear display, Cursor home */
 }
 
 void static LCD_Read(){
