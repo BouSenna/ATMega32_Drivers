@@ -5,7 +5,7 @@ These are some drivers for ATMega32 AVR Microcontroller peripherals and commonly
 - [x] LED
 - [x] 7-Segments
 - [x] LCD
-- [ ] Keypad
+- [x] Keypad
 
 ### Microcontroller Abstraction Layer Drivers
 - [x] DIO
