@@ -39,12 +39,113 @@
 #define  LCD_POSITION_16                15U
 
 
-void LCD_Init();
-void static LCD_Write(U8);
-void LCD_WriteCommand(U8);
-void LCD_WriteCharacter(U8);
-void LCD_WriteString(U8*);
-void LCD_SetCursor(U8, U8);
+
+
+/***
+ * [Purpose] Initialize LCD.
+ *
+ * Initializes the LCD by: 
+ *      [1] Waiting for the LCD to power up. 
+ *      [2] Setting the direction of the LCD port as output.
+ *      [3] Sending the initialization values of 16x2 LCD as commands 
+ *          1. Send command to initialize LCD in 4-bit mode
+ *          2. Configure LCD in 2-line, 4-bit mode, 5x8 dots.
+ *          3. Send Display on cursor off command
+ *          4. Send Increment cursor command
+ *      [4] Clear the LCD display screen 
+ *
+ * [Arguments] None.
+ * [Return Type] Void.
+ *
+ ***/
+void LCD_Init(void);
+
+
+
+
+/***
+ * [Purpose] Give high to low pulse at enable.
+ * 
+ * [Arguments] None.
+ * [Return Type] Void.
+ *
+ ***/	
+void static LCD_Read(void);
+
+
+
+	
+/***
+ * [Purpose] Write command with 4-bit mode.
+ *
+ * 1. Writes each bit of the high nibbles [4-7] to data bus.
+ * 2. Invokes LCD_Read() method : gives high to low pulsa at enable.
+ * 3. Write each bit of the low nibbles [0-3] to data bus.
+ * 4. Invokes LCD_Read() method : gives high to low pulsa at enable.
+ *
+ * [Arguments] value : could be either command or character.
+ * [Return Type] Void.
+ *
+ ***/	
+void static LCD_Write(U8 value);
+
+
+
+
+/***
+ * [Purpose] Write command.
+ *
+ * 1. Clears RS pin (command register)
+ * 2. Clears RW pin (Write operation)
+ * 3. Invokes LCD_Write()
+ *
+ * [Arguments] cmd : command.
+ * [Return Type] Void.
+ *
+ ***/	
+void LCD_WriteCommand(U8 cmd);
+
+
+
+
+/***
+ * [Purpose] Write character.
+ *
+ * 1. Clears RS pin (command register)
+ * 2. Clears RW pin (Write operation)
+ * 3. Invokes LCD_Write()
+ *
+ * [Arguments] character : the character required to be written on the LCD.
+ * [Return Type] Void.
+ *
+ ***/	
+void LCD_WriteCharacter(U8 character);
+
+
+
+
+/***
+ * [Purpose] Write string.
+ *
+ * This method takes a string and pass it character by character to 
+ *  LCD_WriteCharacter() method to be written.
+ *
+ * [Arguments] str : the string required to be written on the LCD.
+ * [Return Type] Void.
+ ***/	
+void LCD_WriteString(U8* str);
+
+
+
+
+/***
+ * [Purpose] Set the cursor to a specific position.
+ *
+ * [Arguments] row : could be either 0 or 1.
+ *             position : could be any value ranging between 0-15
+ * [Return Type] Void.
+ ***/	
+void LCD_SetCursor(U8 row, U8 position);
 
 
 #endif 
