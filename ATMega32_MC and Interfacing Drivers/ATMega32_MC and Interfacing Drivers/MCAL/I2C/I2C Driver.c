@@ -38,7 +38,7 @@ void I2C_Set_Address(U8 address){
 U8 I2C_Read(U8 ACK){
 	/// Setting the TWEN and TWINT bits of the TWCR register to one to start receiving a byte.
 	TWCR = (1 << TWINT) | (1 << TWEN);
-	/// Setting the TWEA bit of the TWCR register to one to return acknowledgement.
+	/// Setting the TWEA bit of the TWCR register to one to return acknowledgment.
 	TWCR = (ACK << TWEA);
 	
 	/// Polling the TWINT flag in the TWCR register to make sure the byte has been received completely.
