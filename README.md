@@ -9,11 +9,11 @@ These are some drivers for ATMega32 AVR Microcontroller peripherals and commonly
 
 ### Microcontroller Abstraction Layer Drivers
 - [x] DIO
-- [ ] SPI
-- [ ] I2C
+- [x] SPI
+- [x] I2C
 - [ ] Timers
 - [ ] ADC
-- [ ] UART
+- [x] UART
 
 ### Datasheet
 * [Microcontroller Datasheet](https://github.com/BouSenna/ATMega32_Drivers/blob/master/ATMega32_MC%20and%20Interfacing%20Drivers/Atmel-8155-8-bit-Microcontroller-AVR-ATmega32A_Datasheet.pdf)
