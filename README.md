@@ -6,6 +6,9 @@ These are some drivers for ATMega32 AVR Microcontroller peripherals and commonly
 - [x] 7-Segments
 - [x] LCD
 - [x] Keypad
+- [x] DC Motor
+- [x] Buzzer
+- [x] External EEPROM
 
 ### Microcontroller Abstraction Layer Drivers
 - [x] DIO
